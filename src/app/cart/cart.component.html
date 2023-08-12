@@ -1,0 +1,35 @@
+<span class="badge suri">{{cartCount}}</span>
+<img class="image" data-bs-toggle="modal" data-bs-target="#myModal" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAAB6CAMAAACMcJFtAAAAY1BMVEX///8AAACdnZ12dnbb29uHh4cGBgaWlpY2Njbs7Oz8/Py7u7urq6uvr68fHx88PDz09PRaWlpERESlpaXj4+MZGRnExMRubm7T09MwMDBTU1OOjo4oKCh9fX1MTExmZmYSEhLba3/1AAAEPElEQVR4nO2a6ZajIBCFY3ax2xhjVrP4/k853V7EsnDMdCjizBm+X5GD4QpFLcpkEggEAoFAIBAI/PsUCeMwtqLJIrK4zseVdLIlRVE+rqZbn6aqGFNSdu/TtI/H1FT0SYpuY0qaHPoklWpUTbNaxHFUDZxNreljbBmUIq01jbrNOAl8ZDa2Dgqc+GxsGR2utaad69+oz6kc2Puu4S3e9Ho5J1ynaSYvaesoqT8+ufHpOk9beU0nV029uYUTubN3gpeL7tOVQe+eY9s0fdQt6YpgdVpNsV0erpImmdZE29BEvcxn3bImLapnnXLrvtdQ2hfQtnPdsiItH9BEco45bqPJmlywW9gPjJWiiZitKbEfBU2pQLDDcJ1ZgcyH4p3OpGVna5ILdnoRaBr2Ye0fWxNsvFOQINhNBTRpi94Qy7AXwdY0syalz+pfRXtNEjgPlv1amtTFmpQeC3sZbVAkIsz3fANZmrIrv0mbk2uwA7pyJa4uhjMgdb6tCTclbReF+ZZJxXW2QhyispyfpQl1XEWMpxA0p8YdVcSgkCwsBjTB5K7E5A7WVnGhtNbhwVcTseXMGzbkXyTNyRjUfdFQYp7OpWmAyD3vkZZtS8rX2wltryJIvWnSvkYCiWAHSjFNcpVdIqZJJNjVxGKahLzTN4gl0XHWgMhxN9ewuKW5hs+uzA03bZJykpoizzylwt4vTQe4o1R1r0k2A5O8CGpKuDWgmmmdJtcECVtzrYOdlHf6Rud17WNizNZvQ9PeaODZcSxuTpMMQfds1oJnttBUGU1IHNqAKBvswIM95+GJpogtlWywA3peTPLDKyWmSUejNsHKmT1KoJMfUyhkbN6YJi3ZJKIFfIfsZ5WsYouFS5PaQtOy0aSX1iylXGVHObLFYs6BaeJboOzOshBTNjHIj4zTTLqaUNy1GZ1gZUfQq2F2Nyvfku5i3brzIlnZEfTfXppRp93NzWo3eG1TznPPIQW8YHTTqSxGTZvMVvuv5hJ57rabCEsGO+Ce10kGO+Ce18l/itYvtF5HNtgB10JBNtiB3i+UP2D1fIifUyxmL/FY1ppGPkPQBRMsHezcQKB5jPsdmuEn2DnhKdg54SvYuYCgdH/e8X14qOyc0ZXd+OeuCHjJd/Z2cCee/5ji5i3Y1STnaPlTKo/BbuL2WtNXsHPI6lJf5uSQrHgLdup1Tcnzf3+R02X9TV4H1WW+WQ+S1y8cq/zrl8/4q+IvMtTh0TYeRhc6i687PEoCxtSHfc6u6faGM4XEqoaWZN528x9Wdu1g+cBuIseB/B8yJIPtf+8J6Seate9DqupItvjvc0d6RMmbwzSQo9bXgVMe5IjS3fu+IxFm6EXJqu32ho3Xnq8bSvtV+3rhDYVdkeuxhr/Kn7So6i0ZZlynaZtnYxX1e7LLu2oodTr8yV7KTqe/qiAPBAKBQCAQCPz3/AJhwjVgXbY6HwAAAABJRU5ErkJggg==" >
+
+ <!-- The Modal -->
+ <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header ">
+          <h4 class="modal-title " >{{totalAmount}}</h4>
+          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        </div>
+  <!-- Modal body -->
+       <div class="modal-body">
+        <div class="babu" *ngFor="let suri of products">
+        <img  style="width:100px;height:100px" class="mx-auto d-block" src="{{suri?.image}}" alt="">
+        <p class="data text-center"><b>Title:</b>{{suri.title}}</p>
+  <p class="data text-center "><b>Id:</b>{{suri.id}}</p>
+  <p class="data text-center"><b>Cost:</b>{{suri.price}}</p>
+  <p class="data text-center"><b>Category:</b>{{suri.category}}</p>
+  
+  <p class="data text-center"><b>Desc:</b>{{suri.description}}</p>
+  <button (click)="delete(suri)" class=" btn btn-danger text-center">Delete</button><br><hr>
+  </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

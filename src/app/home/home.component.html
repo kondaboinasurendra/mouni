@@ -1,0 +1,52 @@
+<p>Products</p>
+<div class="main">
+    <div *ngFor="let prod of products" class="product">
+        <img src="{{prod.image}}"  alt="">
+    <div class="detailes">
+    <p class="data text-center"><b>Title:</b>{{prod.title}}</p>
+    <p class="data text-center"><b>Id:</b>{{prod.id}}</p>
+    <p class="text-center"><b>Cost:</b>{{prod.price}}</p>
+    <p class="text-center"><b>Category:</b>{{prod.category}}</p>
+    <p class="data text-center"><b>Rating:</b><span id="rated">{{prod.rating.rate}}*</span><span id="count">({{prod.rating.count}})</span></p>
+    <p class="data"><b>Desc:</b>{{prod.description}}</p>
+    <button  type="button" (click)="add(prod)" class="btn btn-primary">Add</button>
+    <button type="button" (click)="viewdetalies(prod)"  class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal">
+        Details
+      </button>
+    </div>
+    </div>
+    <!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title " id="suri">{{suri?.title}}</h4>
+          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        </div>
+  <!-- Modal body -->
+       <div class="modal-body">
+        <div class="babu">
+        <img  style="width:300px;height:200px;" src="{{suri?.image}}" alt="">
+        <p class="data text-center"><b>Title:</b>{{suri.title}}</p>
+  <p class="data text-center "><b>Id:</b>{{suri.id}}</p>
+  <p class="data text-center"><b>Cost:</b>{{suri.price}}</p>
+  <p class="data text-center"><b>Category:</b>{{suri.category}}</p>
+  
+  <p class="data text-center"><b>Desc:</b>{{suri.description}}</p>
+  </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+      
+    </div>
